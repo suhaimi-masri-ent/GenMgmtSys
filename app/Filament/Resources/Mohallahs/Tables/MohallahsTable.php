@@ -6,7 +6,9 @@ use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
+use Illuminate\Database\Eloquent\Builder;
 use Filament\Tables\Table;
+use Filament\Tables\Filters\Filter;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\TextInputColumn;
 
@@ -16,15 +18,20 @@ class MohallahsTable
     {
         return $table
             ->columns([
-                TextColumn::make('state.name')->label('Nama Negeri')
+                TextColumn::make('country.name')->label('Negara')
                     ->searchable()->sortable(),
-                TextColumn::make('markaz.name')->label('Nama Markaz')
+                TextColumn::make('state.name')->label('Negeri')
                     ->searchable()->sortable(),
-                TextColumn::make('halqah.name')->label('Nama Halqah')
+                TextColumn::make('city.name')->label('Bandar')
+                    ->searchable()->sortable(),
+                TextColumn::make('markaz.name')->label('Markaz')
+                    ->searchable()->sortable(),
+                TextColumn::make('halqah.name')->label('Halqah')
                     ->searchable()->sortable(),
                 TextColumn::make('name')
                     ->searchable()->sortable(),
                 TextColumn::make('description')
+                    ->hidden()
                     ->searchable(),
             ])
             ->filters([

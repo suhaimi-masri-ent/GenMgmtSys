@@ -29,6 +29,11 @@ class Markaz extends Model
         return $this->belongsTo(State::class);
     }
 
+    public function city(): BelongsTo
+    {
+        return $this->belongsTo(City::class);
+    }
+
     public function mohallahs(): HasMany
     {
         return $this->hasMany(Mohallah::class);

@@ -11,6 +11,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Hidden;
 use App\Models\Country;
 use App\Models\State;
+use App\Models\City;
 
 
 class MarkazForm
@@ -32,6 +33,16 @@ class MarkazForm
                 Select::make('state_id')->label('Nama Negeri')
                     ->options(fn (Get $get): Collection => State::query()
                         ->where('country_id', $get('country_id'))
+                        ->pluck('name', 'id'))                    
+                    ->preload()->searchable()
+                    ->live()
+                    ->afterStateUpdated(function (Set $set) {
+                        $set('city_id', null);
+                    })
+                    ->required(),
+                Select::make('city_id')->label('Nama Bandar')
+                    ->options(fn (Get $get): Collection => City::query()
+                        ->where('state_id', $get('state_id'))
                         ->pluck('name', 'id'))                    
                     ->preload()->searchable()->required(),
 

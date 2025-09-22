@@ -55,7 +55,7 @@ class HalqahResource extends Resource
     {
         return [
             'index' => ListHalqahs::route('/'),
-            'create' => CreateHalqah::route('/create'),
+            // 'create' => CreateHalqah::route('/create'),
             // 'view' => ViewHalqah::route('/{record}'),
             'edit' => EditHalqah::route('/{record}/edit'),
         ];

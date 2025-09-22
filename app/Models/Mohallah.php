@@ -30,11 +30,25 @@ class Mohallah extends Model
         return $this->belongsTo(Markaz::class);
     }
 
-    public function zone(): BelongsTo
+    // public function zone(): BelongsTo
+    // {
+    //     return $this->belongsTo(Zone::class);
+    // }
+
+    public function city(): BelongsTo
     {
-        return $this->belongsTo(Zone::class);
+        return $this->belongsTo(City::class);
     }
 
+    public function state(): BelongsTo
+    {
+        return $this->belongsTo(State::class);
+    }
+
+    public function country(): BelongsTo
+    {
+        return $this->belongsTo(Country::class);
+    }
 
 
 }

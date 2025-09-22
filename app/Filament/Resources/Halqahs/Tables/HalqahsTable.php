@@ -17,15 +17,18 @@ class HalqahsTable
     {
         return $table
             ->columns([
-                TextColumn::make('country.name')->label('Nama Negara')
+                TextColumn::make('country.name')->label('Negara')
                     ->searchable()->sortable(),
-                TextColumn::make('state.name')->label('Nama Negeri')
+                TextColumn::make('state.name')->label('Negeri')
                     ->searchable()->sortable(),
-                TextColumn::make('markaz.name')->label('Nama Markaz')
+                TextColumn::make('city.name')->label('Bandar')
+                    ->searchable()->sortable(),
+                TextColumn::make('markaz.name')->label('Markaz')
                     ->searchable()->sortable(),
                 TextColumn::make('name')
                     ->searchable()->sortable(),
                 TextColumn::make('description')
+                    ->hidden()
                     ->searchable(),
             ])
             ->filters([

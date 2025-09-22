@@ -55,7 +55,7 @@ class MohallahResource extends Resource
     {
         return [
             'index' => ListMohallahs::route('/'),
-            'create' => CreateMohallah::route('/create'),
+            // 'create' => CreateMohallah::route('/create'),
             // 'view' => ViewMohallah::route('/{record}'),
             'edit' => EditMohallah::route('/{record}/edit'),
         ];

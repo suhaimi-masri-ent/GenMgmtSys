@@ -6,6 +6,7 @@ use App\Filament\Resources\MarkazResource\RelationManagers;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Country;
 use App\Models\State;
+use App\Models\City;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -24,6 +25,8 @@ class MarkazsTable
                 TextColumn::make('country.name')->label('Nama Negara')
                     ->searchable()->sortable(),
                 TextColumn::make('state.name')->label('Nama Negeri')
+                    ->searchable()->sortable(),
+                TextColumn::make('city.name')->label('Nama Bandar')
                     ->searchable()->sortable(),
                 TextColumn::make('name')
                     ->searchable()->sortable(),
