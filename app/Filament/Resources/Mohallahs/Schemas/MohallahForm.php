@@ -47,11 +47,13 @@ class MohallahForm
                     ->preload()->searchable()->live()
                     ->afterStateUpdated(function (Set $set) {
                         $set('markaz_id', null);
+                        $set('halqah_id', null);
                     })
                     ->required(),
                 Select::make('markaz_id')->label('Nama Markaz')
                     ->options(fn (Get $get): Collection => Markaz::query()
-                        ->where('city_id', $get('city_id'))
+                        // ->where('city_id', $get('city_id'))
+                        ->where('state_id', $get('state_id'))
                         ->pluck('name', 'id'))                    
                     ->preload()->searchable()->live()
                     ->afterStateUpdated(function (Set $set) {

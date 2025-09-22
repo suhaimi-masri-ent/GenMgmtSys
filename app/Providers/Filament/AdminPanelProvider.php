@@ -38,10 +38,11 @@ class AdminPanelProvider extends PanelProvider
                 Dashboard::class,
             ])
             ->sidebarCollapsibleOnDesktop()
+            ->topNavigation()
             ->navigationGroups([
                 NavigationGroup::make()
-                    ->label('Amal Masjid')
-                    ->icon('heroicon-o-pencil'),                
+                    ->label('Geo Spatial')
+                    ->icon('heroicon-o-map'),                
                 NavigationGroup::make()
                     ->label(fn (): string => __('navigation.settings'))
                     ->icon('heroicon-o-cog-6-tooth')

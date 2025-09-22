@@ -55,7 +55,7 @@ class MasjidResource extends Resource
     {
         return [
             'index' => ListMasjids::route('/'),
-            'create' => CreateMasjid::route('/create'),
+            // 'create' => CreateMasjid::route('/create'),
             //'view' => ViewMasjid::route('/{record}'),
             'edit' => EditMasjid::route('/{record}/edit'),
         ];

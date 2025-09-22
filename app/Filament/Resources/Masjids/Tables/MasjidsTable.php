@@ -15,13 +15,25 @@ class MasjidsTable
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('country.name')->label('Negara')
+                    ->searchable()->sortable()
+                    ->hidden(),
+                TextColumn::make('state.name')->label('Negeri')
+                    ->searchable()->sortable()
+                    ->hidden(),
+                TextColumn::make('city.name')->label('Bandar')
+                    ->searchable()->sortable()
+                    ->hidden(),
+                TextColumn::make('markaz.name')->label('Markaz')
+                    ->searchable()->sortable(),
+                TextColumn::make('halqah.name')->label('Halqah')
+                    ->searchable()->sortable(),
+                // TextColumn::make('mohallah.name')->label('Mohallah')
+                //     ->searchable()->sortable(),
                 TextColumn::make('name')
                     ->searchable()->sortable(),
                 TextColumn::make('type'),
                 TextColumn::make('management'),
-                TextColumn::make('city.name')->label('Nama Bandar')
-                    ->searchable()->sortable(),
             ])
             ->filters([
                 //
