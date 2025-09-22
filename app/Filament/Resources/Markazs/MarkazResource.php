@@ -55,7 +55,7 @@ class MarkazResource extends Resource
     {
         return [
             'index' => ListMarkazs::route('/'),
-            'create' => CreateMarkaz::route('/create'),
+            // 'create' => CreateMarkaz::route('/create'),
             // 'view' => ViewMarkaz::route('/{record}'),
             'edit' => EditMarkaz::route('/{record}/edit'),
         ];

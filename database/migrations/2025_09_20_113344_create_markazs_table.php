@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('markazs', function (Blueprint $table) {
             $table->id();
-            // $table->foreignId('country_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('country_id')->constrained()->cascadeOnDelete();
             $table->foreignId('state_id')->constrained()->cascadeOnDelete();
             // $table->foreignId('city_id')->constrained()->cascadeOnDelete();
             // $table->foreignId('zone_id')->constrained()->cascadeOnDelete();

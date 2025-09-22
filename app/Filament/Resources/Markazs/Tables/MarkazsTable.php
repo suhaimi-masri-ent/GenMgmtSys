@@ -21,7 +21,7 @@ class MarkazsTable
     {
         return $table
             ->columns([
-                TextColumn::make('country_id.country.name')->label('Nama Negara')
+                TextColumn::make('country.name')->label('Nama Negara')
                     ->searchable()->sortable(),
                 TextColumn::make('state.name')->label('Nama Negeri')
                     ->searchable()->sortable(),
