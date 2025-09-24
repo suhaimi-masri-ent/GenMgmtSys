@@ -5,17 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 // use Illuminate\Database\Eloquent\Relations\BelongsTo;
-// use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class KhidmatMarkaz extends Model
 {
     use HasFactory;
 
     // protected $guareded = [];
-    protected $fillable = [
-        'name',
-        'content'
-    ];
+    protected $guarded = [];
 
 
     // public function markaz(): BelongsTo
@@ -23,9 +20,15 @@ class KhidmatMarkaz extends Model
     //     return $this->belongsTo(Markaz::class);
     // }
 
-    // public function ahbabs(): HasMany
+    // public function khidmat_walas(): HasMany
     // {
-    //     return $this->hasMany(Ahbab::class);
+    //     return $this->hasMany(KhidmatWala::class);
     // }
+
+    // public function khidmatwala(): BelongsTo
+    // {
+    //     return $this->belongsTo(KhidmatWala::class);
+    // }
+
 
 }
