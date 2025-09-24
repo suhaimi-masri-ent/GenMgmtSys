@@ -30,9 +30,16 @@ class AhbabsTable
                 TextColumn::make('halqah.name')->label('Halqah')
                     ->searchable()->sortable()
                     ->hidden(),
-                TextColumn::make('fullname')
+                TextColumn::make('mohallah.name')->label('Mohallah')
                     ->searchable()->sortable(),
-                TextColumn::make('nric')
+                TextColumn::make('fullname')->label('Nama')
+                    ->searchable()->sortable(),
+                TextColumn::make('phone')->label('Phone')
+                    ->searchable()->sortable(),
+                TextColumn::make('nric')->label('No. K/P')
+                    ->searchable()
+                    ->hidden(),
+                TextColumn::make('description')->label('Komen')
                     ->searchable(),
             ])
             ->filters([

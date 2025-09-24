@@ -19,10 +19,12 @@ return new class extends Migration
             $table->char('nric');
             $table->date('dob');
             $table->string('home_add');
-            $table->char('phone');
-            $table->string('language');
+            $table->char('phone')->nullable();
+            $table->char('email')->nullable();
+            $table->string('language')->nullable();
             $table->string('occupation');
             $table->string('marriage');
+            $table->text('description');
             $table->foreignId('country_id')->constrained()->cascadeOnDelete();
             $table->foreignId('state_id')->constrained()->cascadeOnDelete();
             $table->foreignId('city_id')->constrained()->cascadeOnDelete();

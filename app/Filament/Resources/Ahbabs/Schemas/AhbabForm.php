@@ -27,10 +27,26 @@ class AhbabForm
                 TextInput::make('nric')->required()->label('No. K/P'),
                 DatePicker::make('dob')->required()->label('Tarikh Lahir'),
                 TextInput::make('home_add')->required()->label('Alamat'),
-                TextInput::make('phone')->required()->label('No. Tel.'),
+                TextInput::make('phone')->label('No. Tel.'),
+                TextInput::make('phone')->label('Email'),
                 TextInput::make('language')->label('Bahasa'),
-                TextInput::make('marriage')->required()->label('Status'),
-                TextInput::make('occupation')->required()->label('Pekerjaan'),
+                Select::make('marriage')->required()->label('Status')
+                    ->options([
+                        'single' => 'Bujang',
+                        'married' => 'Berkahwin',
+                        'widowed' => 'Duda',
+                    ]),
+                Select::make('occupation')->required()->label('Pekerjaan')
+                    ->options([
+                        'student' => 'Pelajar',
+                        'private' => 'Swasta',
+                        'goverment' => 'Kerajaan',
+                        'selfemploy' => 'Sendiri',
+                        'freelance' => 'Tiada',
+                        'pensioner' => 'Pesara',
+                    ]),
+                TextInput::make('description')->label('Komen')
+                    ->columnSpanFull(),
                 Select::make('country_id')->label('Nama Negara')
                     ->relationship(name: 'country', titleAttribute: 'name')
                     ->preload()->searchable()
@@ -68,9 +84,18 @@ class AhbabForm
                         $set('halqah_id', null);
                     })
                     ->required(),
-                Select::make('halqah_id')->required()->label('Nama Halqah')
+                Select::make('halqah_id')->label('Nama Halqah')
                     ->options(fn (Get $get): Collection => Halqah::query()
                         ->where('markaz_id', $get('markaz_id'))
+                        ->pluck('name', 'id'))                    
+                    ->preload()->searchable()->live()
+                    ->afterStateUpdated(function (Set $set) {
+                        $set('mohallah_id', null);
+                    })
+                    ->required(),
+                Select::make('mohallah_id')->required()->label('Nama Mohallah')
+                    ->options(fn (Get $get): Collection => Mohallah::query()
+                        ->where('halqah_id', $get('halqah_id'))
                         ->pluck('name', 'id'))                    
                     ->preload()->searchable()->live()->required(),
             ]);
