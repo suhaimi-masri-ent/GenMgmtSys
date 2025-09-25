@@ -58,6 +58,7 @@ class AdminPanelProvider extends PanelProvider
                 AccountWidget::class,
                 FilamentInfoWidget::class,
             ])
+            ->brandName('Intizam')
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
