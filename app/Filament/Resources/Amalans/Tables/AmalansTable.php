@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\Walas\Tables;
+namespace App\Filament\Resources\Amalans\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
@@ -9,25 +9,28 @@ use Filament\Actions\ViewAction;
 use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
 
-class WalasTable
+class AmalansTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('markaz.name')->label('Markaz')
+                TextColumn::make('mohallah.name')->label('Mohallah')
+                    ->searchable()->sortable()
+                    ->hidden(),
+                TextColumn::make('amal.name')->label('Amal')
                     ->searchable()->sortable(),
-                TextColumn::make('khidmat.name')->label('Khidmat')
+                TextColumn::make('ahbab.fullname')->label('Ahbab')
                     ->searchable()->sortable(),
-                TextColumn::make('ahbab.fullname')->label('Petugas')
+                TextColumn::make('date')->label('Tarikh')
                     ->searchable()->sortable(),
-                TextColumn::make('date')->label('Tarikh'),
-                TextColumn::make('time')->label('Masa'),
+                TextColumn::make('checkin')->label('Masa Mula'),
+                TextColumn::make('checkout')->label('Masa Tamat'),
                 TextColumn::make('location')->label('Lokasi')
-                    ->searchable(),
+                    ->searchable()->sortable()
+                    ->hidden(),
                 TextColumn::make('description')->label('Nota')
                     ->searchable(),
-
             ])
             ->filters([
                 //

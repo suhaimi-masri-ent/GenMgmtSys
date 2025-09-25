@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\Walas\Tables;
+namespace App\Filament\Resources\Amals\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
@@ -9,25 +9,16 @@ use Filament\Actions\ViewAction;
 use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
 
-class WalasTable
+class AmalsTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('markaz.name')->label('Markaz')
+                TextColumn::make('name')->label('Amal')
                     ->searchable()->sortable(),
-                TextColumn::make('khidmat.name')->label('Khidmat')
-                    ->searchable()->sortable(),
-                TextColumn::make('ahbab.fullname')->label('Petugas')
-                    ->searchable()->sortable(),
-                TextColumn::make('date')->label('Tarikh'),
-                TextColumn::make('time')->label('Masa'),
-                TextColumn::make('location')->label('Lokasi')
+                TextColumn::make('description')->label('Kandungan')
                     ->searchable(),
-                TextColumn::make('description')->label('Nota')
-                    ->searchable(),
-
             ])
             ->filters([
                 //

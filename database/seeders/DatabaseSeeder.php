@@ -26,6 +26,11 @@ class DatabaseSeeder extends Seeder
         $this->call(CountrySeeder::class);
         $this->call(StateSeeder::class);
         $this->call(CitySeeder::class);
+        $this->call(MarkazSeeder::class);
+        $this->call(HalqahSeeder::class);
+        $this->call(MohallahSeeder::class);
+        // $this->call(KhidmatSeeder::class);
+        // $this->call(AmalSeeder::class);
 
     }
 }

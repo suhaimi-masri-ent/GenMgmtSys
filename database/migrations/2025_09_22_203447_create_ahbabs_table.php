@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('language')->nullable();
             $table->string('occupation');
             $table->string('marriage');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->foreignId('country_id')->constrained()->cascadeOnDelete();
             $table->foreignId('state_id')->constrained()->cascadeOnDelete();
             $table->foreignId('city_id')->constrained()->cascadeOnDelete();

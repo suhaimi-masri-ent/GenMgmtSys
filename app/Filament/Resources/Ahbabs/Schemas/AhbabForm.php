@@ -28,7 +28,7 @@ class AhbabForm
                 DatePicker::make('dob')->required()->label('Tarikh Lahir'),
                 TextInput::make('home_add')->required()->label('Alamat'),
                 TextInput::make('phone')->label('No. Tel.'),
-                TextInput::make('phone')->label('Email'),
+                TextInput::make('email')->label('Email'),
                 TextInput::make('language')->label('Bahasa'),
                 Select::make('marriage')->required()->label('Status')
                     ->options([

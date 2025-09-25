@@ -39,18 +39,20 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->sidebarCollapsibleOnDesktop()
             // ->topNavigation()
-            // ->navigationGroups([
-            //     NavigationGroup::make()
-            //         ->label('Geo Spatial')
-            //         ->icon('heroicon-o-map'),                
-            //     NavigationGroup::make()
-            //         ->label('Personnel')
-            //         ->icon('heroicon-o-user-circle'),                
-            //     NavigationGroup::make()
-            //         ->label(fn (): string => __('navigation.settings'))
-            //         ->icon('heroicon-o-cog-6-tooth')
-            //         ->collapsed(),
-            // ])            
+            ->navigationGroups([
+                NavigationGroup::make()
+                    ->label('Geo Spatial')
+                    ->icon('heroicon-o-map')                
+                    ->collapsed(true)
+                    ->collapsible(true),
+                NavigationGroup::make()
+                    ->label('Personnel')
+                    ->icon('heroicon-o-user-circle'),                
+                NavigationGroup::make()
+                    ->label(fn (): string => __('navigation.settings'))
+                    ->icon('heroicon-o-cog-6-tooth')
+                    ->collapsible(true),
+            ])            
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
             ->widgets([
                 AccountWidget::class,
