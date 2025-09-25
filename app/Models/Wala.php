@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 // use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class KhidmatWala extends Model
+class Wala extends Model
 {
     use HasFactory;
 
@@ -15,9 +15,9 @@ class KhidmatWala extends Model
     protected $guarded = [];
 
 
-    public function khidmatmarkaz(): BelongsTo
+    public function khidmat(): BelongsTo
     {
-        return $this->belongsTo(KhidmatMarkaz::class);
+        return $this->belongsTo(Khidmat::class);
     }
 
     public function markaz(): BelongsTo
@@ -25,13 +25,15 @@ class KhidmatWala extends Model
         return $this->belongsTo(Markaz::class);
     }
 
-    public function ahbab(): BelongsTo
+    public function ahbabs(): HasMany
     {
-        return $this->belongsTo(Ahbab::class);
+        return $this->hasMany(Ahbab::class);
     }
 
-    // public function ahbabs(): HasMany
-    // {
-    //     return $this->hasMany(Ahbab::class);
-    // }
+    public function khidmats(): HasMany
+    {
+        return $this->hasMany(Khidmat::class);
+    }
+
+
 }

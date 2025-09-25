@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-// use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+// use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class KhidmatMarkaz extends Model
+class Khidmat extends Model
 {
     use HasFactory;
 
@@ -25,10 +25,10 @@ class KhidmatMarkaz extends Model
     //     return $this->hasMany(KhidmatWala::class);
     // }
 
-    // public function khidmatwala(): BelongsTo
-    // {
-    //     return $this->belongsTo(KhidmatWala::class);
-    // }
+    public function wala(): BelongsTo
+    {
+        return $this->belongsTo(Wala::class);
+    }
 
 
 }

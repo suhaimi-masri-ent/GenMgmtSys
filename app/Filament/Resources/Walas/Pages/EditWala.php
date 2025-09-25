@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Filament\Resources\KhidmatWalas\Pages;
+namespace App\Filament\Resources\Walas\Pages;
 
-use App\Filament\Resources\KhidmatWalas\KhidmatWalaResource;
+use App\Filament\Resources\Walas\WalaResource;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\ViewAction;
 use Filament\Resources\Pages\EditRecord;
 
-class EditKhidmatWala extends EditRecord
+class EditWala extends EditRecord
 {
-    protected static string $resource = KhidmatWalaResource::class;
+    protected static string $resource = WalaResource::class;
 
     protected function getHeaderActions(): array
     {

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Filament\Resources\KhidmatWalas\Schemas;
+namespace App\Filament\Resources\Walas\Schemas;
 
 use Filament\Schemas\Schema;
 
-class KhidmatWalaInfolist
+class WalaInfolist
 {
     public static function configure(Schema $schema): Schema
     {

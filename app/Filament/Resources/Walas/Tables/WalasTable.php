@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Filament\Resources\KhidmatWalas\Tables;
+namespace App\Filament\Resources\Walas\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Table;
+use Filament\Tables\Columns\TextColumn;
 
-class KhidmatWalasTable
+class WalasTable
 {
     public static function configure(Table $table): Table
     {
@@ -16,7 +17,7 @@ class KhidmatWalasTable
             ->columns([
                 TextColumn::make('markaz.name')->label('Markaz')
                     ->searchable()->sortable(),
-                TextColumn::make('khidmatmarkaz.name')->label('Khidmat')
+                TextColumn::make('khidmat.name')->label('Khidmat')
                     ->searchable()->sortable(),
                 TextColumn::make('ahbab.name')->label('Petugas')
                     ->searchable()->sortable(),

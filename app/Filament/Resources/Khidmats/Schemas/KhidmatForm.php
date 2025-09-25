@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Filament\Resources\KhidmatMarkazs\Schemas;
+namespace App\Filament\Resources\Khidmats\Schemas;
 
 use Filament\Schemas\Schema;
 use Filament\Forms\Components\TextInput;
 
 
-class KhidmatMarkazForm
+class KhidmatForm
 {
     public static function configure(Schema $schema): Schema
     {

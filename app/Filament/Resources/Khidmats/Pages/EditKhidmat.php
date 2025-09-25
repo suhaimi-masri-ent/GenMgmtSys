@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Filament\Resources\KhidmatMarkazs\Pages;
+namespace App\Filament\Resources\Khidmats\Pages;
 
-use App\Filament\Resources\KhidmatMarkazs\KhidmatMarkazResource;
+use App\Filament\Resources\Khidmats\KhidmatResource;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\ViewAction;
 use Filament\Resources\Pages\EditRecord;
 
-class EditKhidmatMarkaz extends EditRecord
+class EditKhidmat extends EditRecord
 {
-    protected static string $resource = KhidmatMarkazResource::class;
+    protected static string $resource = KhidmatResource::class;
 
     protected function getHeaderActions(): array
     {
