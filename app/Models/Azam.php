@@ -7,15 +7,26 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 // use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Amalan extends Model
+class Azam extends Model
 {
     use HasFactory;
 
     protected $guarded = [];
+    
+    // protected function casts(): array
+    // {
+    //     return [
+    //         'cuti' => 'boolean',
+    //         'permission' => 'boolean',
+    //         'amer' => 'boolean',
+    //         'pengendali' => 'boolean',
+    //         'tertib' => 'boolean',
+    //     ];
+    // }   
 
-    public function amal(): BelongsTo
+    public function amalan(): BelongsTo
     {
-        return $this->belongsTo(Amal::class);
+        return $this->belongsTo(Amalan::class);
     }
 
     public function ahbab(): BelongsTo
@@ -26,12 +37,5 @@ class Amalan extends Model
     public function mohallah(): BelongsTo
     {
         return $this->belongsTo(Mohallah::class);
-    }    
-
-
-
-    // public function ahbabs(): HasMany
-    // {
-    //     return $this->hasMany(Ahbab::class);
-    // }
+    }  
 }
