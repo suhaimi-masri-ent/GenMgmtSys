@@ -20,13 +20,13 @@ class WalaForm
     {
         return $schema
             ->components([
-                Select::make('markaz.name')->required()->label('Markaz')
+                Select::make('markaz_id')->required()->label('Markaz')
                     ->relationship(name: 'markaz', titleAttribute: 'name')
                     ->preload()->searchable(),
-                Select::make('ahbab.fullname')->required()->label('Petugas')
+                Select::make('ahbab_id')->required()->label('Petugas')
                     ->relationship(name: 'ahbab', titleAttribute: 'fullname')
                     ->preload()->searchable(),   
-                Select::make('khidmat.name')->required()->label('Tugasan')
+                Select::make('khidmat_id')->required()->label('Tugasan')
                     ->relationship(name: 'khidmat', titleAttribute: 'name')
                     ->preload()->searchable(),                
                 DatePicker::make('date')->required()->label('Tarikh')
@@ -34,9 +34,9 @@ class WalaForm
                     ->displayFormat('d/m/Y'),
                 TimePicker::make('time')->required()->label('Masa')
                     ->native(false)
-                    ->hoursStep(2)
-                    ->minutesStep(15)
-                    ->secondsStep(10),
+                    // ->hoursStep(2)
+                    // ->minutesStep(15)
+                    ->seconds(false),
                 TextInput::make('location')->label('Lokasi'),
                 TextInput::make('description')->label('Nota')
                     ->columnSpanFull(),

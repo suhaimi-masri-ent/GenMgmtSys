@@ -27,6 +27,8 @@ class WalaResource extends Resource
 
     protected static string | UnitEnum | null $navigationGroup = 'Personnel';
 
+    protected static ?int $navigationSort = 45;
+
     public static function form(Schema $schema): Schema
     {
         return WalaForm::configure($schema);

@@ -24,10 +24,10 @@ class AzamForm
     {
         return $schema
             ->components([
-                Select::make('mohallah.name')->required()->label('Mohallah')
+                Select::make('mohallah_id')->required()->label('Mohallah')
                     ->relationship(name: 'mohallah', titleAttribute: 'name')
                     ->preload()->searchable(),                
-                Select::make('ahbab.fullname')->required()->label('Ahbab')
+                Select::make('ahbab_id')->required()->label('Ahbab')
                     ->relationship(name: 'ahbab', titleAttribute: 'fullname')
                     ->preload()->searchable(),                
                 // Select::make('amalan.name')->required()->label('Amal')
@@ -49,14 +49,14 @@ class AzamForm
                 TextInput::make('last2y')->label('2 Tahun lepas'),    
                 Grid::make(2)
                     ->schema([
-                        Checkbox::make('cuti')->label('Cuti'),
-                        Checkbox::make('permission')->label('Kebenaran'),
+                        Toggle::make('cuti')->label('Cuti'),
+                        Toggle::make('permission')->label('Kebenaran'),
                     ]),
                 Grid::make(3)
                     ->schema([
-                        Checkbox::make('amer')->label('Amer'),
-                        Checkbox::make('pengendali')->label('Pengendali'),
-                        Checkbox::make('tertib')->label('Tertib'),
+                        Toggle::make('amer')->label('Amer'),
+                        Toggle::make('pengendali')->label('Pengendali'),
+                        Toggle::make('tertib')->label('Tertib'),
                     ]),
                 TextInput::make('description')->label('Nota')
                     ->columnSpanFull(),

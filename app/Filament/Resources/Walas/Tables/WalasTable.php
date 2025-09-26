@@ -21,8 +21,8 @@ class WalasTable
                     ->searchable()->sortable(),
                 TextColumn::make('ahbab.fullname')->label('Petugas')
                     ->searchable()->sortable(),
-                TextColumn::make('date')->label('Tarikh'),
-                TextColumn::make('time')->label('Masa'),
+                TextColumn::make('date')->label('Tarikh')->dateTime('d/m/Y'),
+                TextColumn::make('time')->label('Masa')->dateTime('h:i A'),
                 TextColumn::make('location')->label('Lokasi')
                     ->searchable(),
                 TextColumn::make('description')->label('Nota')

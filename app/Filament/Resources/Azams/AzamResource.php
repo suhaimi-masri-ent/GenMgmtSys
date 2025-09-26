@@ -26,6 +26,8 @@ class AzamResource extends Resource
     protected static ?string $recordTitleAttribute = 'Data Azam';
 
     protected static string | UnitEnum | null $navigationGroup = 'Personnel';  
+
+    protected static ?int $navigationSort = 46;
     
     public static function form(Schema $schema): Schema
     {

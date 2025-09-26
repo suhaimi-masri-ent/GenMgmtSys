@@ -27,6 +27,8 @@ class AmalResource extends Resource
 
     protected static string | UnitEnum | null $navigationGroup = 'Personnel';    
 
+    protected static ?int $navigationSort = 41;
+
     public static function form(Schema $schema): Schema
     {
         return AmalForm::configure($schema);

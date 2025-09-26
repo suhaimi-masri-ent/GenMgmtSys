@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Amalans\Schemas;
 
 use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Grid;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\DatePicker;
@@ -17,28 +18,31 @@ class AmalanForm
     {
         return $schema
             ->components([
-                Select::make('mohallah.name')->required()->label('Mohallah')
+                Select::make('mohallah_id')->required()->label('Mohallah')
                     ->relationship(name: 'mohallah', titleAttribute: 'name')
                     ->preload()->searchable(),                
-                Select::make('ahbab.fullname')->required()->label('Ahbab')
+                Select::make('ahbab_id')->required()->label('Ahbab')
                     ->relationship(name: 'ahbab', titleAttribute: 'fullname')
                     ->preload()->searchable(),                
-                Select::make('amal.name')->required()->label('Amal')
+                Select::make('amal_id')->required()->label('Amal')
                     ->relationship(name: 'amal', titleAttribute: 'name')
                     ->preload()->searchable(),                
                 DatePicker::make('date')->required()->label('Tarikh')
                     ->native(false)
                     ->displayFormat('d/m/Y'),
-                TimePicker::make('checkin')->required()->label('Masa Mula')
-                    ->native(false)
-                    ->hoursStep(2)
-                    ->minutesStep(15)
-                    ->secondsStep(10),
-                TimePicker::make('checkout')->required()->label('Masa Tamat')
-                    ->native(false)
-                    ->hoursStep(2)
-                    ->minutesStep(15)
-                    ->secondsStep(10),
+                Grid::make(2)
+                    ->schema([
+                        TimePicker::make('checkin')->required()->label('Masa Mula')
+                            ->native(false)
+                            // ->hoursStep(2)
+                            // ->minutesStep(15)
+                            ->seconds(false),
+                        TimePicker::make('checkout')->required()->label('Masa Tamat')
+                            ->native(false)
+                            // ->hoursStep(2)
+                            // ->minutesStep(15)
+                            ->seconds(false),
+                    ]),
                 TextInput::make('location')->label('Lokasi'),
                 TextInput::make('description')->label('Nota')
                     ->columnSpanFull(),

@@ -24,8 +24,8 @@ class AmalansTable
                     ->searchable()->sortable(),
                 TextColumn::make('date')->label('Tarikh')
                     ->searchable()->sortable(),
-                TextColumn::make('checkin')->label('Masa Mula'),
-                TextColumn::make('checkout')->label('Masa Tamat'),
+                TextColumn::make('checkin')->label('Masa Mula')->dateTime('h:i A'),
+                TextColumn::make('checkout')->label('Masa Tamat')->dateTime('h:i A'),
                 TextColumn::make('location')->label('Lokasi')
                     ->searchable()->sortable()
                     ->hidden(),

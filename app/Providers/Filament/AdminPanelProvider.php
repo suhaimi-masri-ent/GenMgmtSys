@@ -10,6 +10,7 @@ use Filament\Pages\Dashboard;
 use Filament\Navigation\NavigationGroup;
 use Filament\Panel;
 use Filament\PanelProvider;
+use Filament\Support\Enums\Width;
 use Filament\Support\Colors\Color;
 use Filament\Widgets\AccountWidget;
 use Filament\Widgets\FilamentInfoWidget;
@@ -38,7 +39,8 @@ class AdminPanelProvider extends PanelProvider
                 Dashboard::class,
             ])
             ->sidebarCollapsibleOnDesktop()
-            // ->topNavigation()
+            ->topNavigation()
+            ->maxContentWidth(Width::Full)
             ->navigationGroups([
                 NavigationGroup::make()
                     ->label('Geo Spatial')

@@ -24,6 +24,25 @@ class Azam extends Model
     //     ];
     // }   
 
+    // protected $casts = [
+    //         'cuti' => 'boolean',
+    //         'permission' => 'boolean',
+    //         'amer' => 'boolean',
+    //         'pengendali' => 'boolean',
+    //         'tertib' => 'boolean',
+    // ];
+
+    // protected $fillable = [
+    //     'mohallah_id',
+    //     'ahbab_id',
+    //     'checkin',
+    //     'duration',
+    //     'expense',
+    //     'last1y',
+    //     'last2y',
+    //     'description',
+    // ];
+
     public function amalan(): BelongsTo
     {
         return $this->belongsTo(Amalan::class);
@@ -38,4 +57,5 @@ class Azam extends Model
     {
         return $this->belongsTo(Mohallah::class);
     }  
+
 }

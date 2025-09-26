@@ -27,6 +27,8 @@ class KhidmatResource extends Resource
 
     protected static string | UnitEnum | null $navigationGroup = 'Personnel';
 
+    protected static ?int $navigationSort = 42;
+
     public static function form(Schema $schema): Schema
     {
         return KhidmatForm::configure($schema);

@@ -27,6 +27,8 @@ class AhbabResource extends Resource
 
     protected static string | UnitEnum | null $navigationGroup = 'Personnel';
 
+    protected static ?int $navigationSort = 43;
+
     public static function form(Schema $schema): Schema
     {
         return AhbabForm::configure($schema);
