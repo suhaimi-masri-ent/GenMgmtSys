@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Azams\Tables;
 
+// use Filament\Resources\Azams\Pages\Tafakut\Tafakut;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -51,7 +52,8 @@ class AzamsTable
                     Action::make('Tafakut')
                         ->icon('heroicon-m-identification')
                         ->label('Tafakut')
-                        ->url(fn () => URL::route('tafakut')),
+                        ->url(fn (Azam $record): string => route($record->id, 'show'))
+                        // ->url(ShowTafakut::getURL()),
             //     ])->dropdownPlacement('right-start')
             // ], position: RecordActionsPosition::BeforeColumns)
             ])

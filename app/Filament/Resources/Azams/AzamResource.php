@@ -2,17 +2,18 @@
 
 namespace App\Filament\Resources\Azams;
 
-use App\Filament\Resources\Azams\Pages\Tafakut;
 use App\Filament\Resources\Azams\Pages\CreateAzam;
 use App\Filament\Resources\Azams\Pages\EditAzam;
 use App\Filament\Resources\Azams\Pages\ListAzams;
 use App\Filament\Resources\Azams\Pages\ViewAzam;
+use App\Filament\Resources\Azams\Pages\ShowTafakut;
 use App\Filament\Resources\Azams\Schemas\AzamForm;
 use App\Filament\Resources\Azams\Schemas\AzamInfolist;
 use App\Filament\Resources\Azams\Tables\AzamsTable;
 use App\Models\Azam;
 use BackedEnum;
 use UnitEnum;
+use Filament\Resources\Pages\Page;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
@@ -45,6 +46,8 @@ class AzamResource extends Resource
         return AzamsTable::configure($table);
     }
 
+
+
     public static function getRelations(): array
     {
         return [
@@ -54,13 +57,13 @@ class AzamResource extends Resource
 
     public static function getPages(): array
     {
-        // AzamResource::getUrl('tafakut');
         return [
             'index' => ListAzams::route('/'),
+            'show' => ShowTafakut::route('/{record}/show'),
             // 'create' => CreateAzam::route('/create'),
             // 'view' => ViewAzam::route('/{record}'),
             // 'edit' => EditAzam::route('/{record}/edit'),
-            'tafakut' => Pages\Tafakut::route('/tafakut'),
+
         ];
     }
 }
