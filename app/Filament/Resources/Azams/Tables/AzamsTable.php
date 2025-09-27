@@ -7,9 +7,13 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Actions\Action;
+use Filament\Actions\ActionGroup;
 use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Enums\RecordActionsPosition;
+use Filament\Support\Enums\Alignment;
+use Illuminate\Support\Facades\URL;
 
 
 class AzamsTable
@@ -41,12 +45,15 @@ class AzamsTable
                 //
             ])
             ->recordActions([
-                ViewAction::make()->iconButton(),
-                EditAction::make()->iconButton(),
-                Action::make('Tafakut')
-                    ->icon('heroicon-m-identification')
-                    ->iconButton()
-                    ->label('Tafakut'),
+                // ActionGroup::make([
+                    ViewAction::make(),
+                    EditAction::make(),
+                    Action::make('Tafakut')
+                        ->icon('heroicon-m-identification')
+                        ->label('Tafakut')
+                        ->url(fn () => URL::route('tafakut')),
+            //     ])->dropdownPlacement('right-start')
+            // ], position: RecordActionsPosition::BeforeColumns)
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
@@ -54,19 +61,6 @@ class AzamsTable
                 ]),
             ]);
 
-            // ->actions([
-            //     Action::make('promote')
-            //         ->label('Promote Student')
-            //         ->icon('heroicon-o-arrow-up')
-            //         ->color('success')
-            //         ->requiresConfirmation()
-            //         ->action(function (Student $record) {
-            //             $record->standard_id++;
-            //             $record->save();
-            //             // Optionally, add a notification
-            //             Filament::notify('success', 'Student promoted successfully!');
-            //         }),
-            // ]);
 
     }
 }

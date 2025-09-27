@@ -10,10 +10,14 @@ class ListAmalans extends ListRecords
 {
     protected static string $resource = AmalanResource::class;
 
+    protected static ?string $title = 'Tasykil'; 
+    // protected static ?string $heading = 'Nisabs'; 
+
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make(),
+            CreateAction::make()
+                ->label('New Tasykil'),
         ];
     }
 }

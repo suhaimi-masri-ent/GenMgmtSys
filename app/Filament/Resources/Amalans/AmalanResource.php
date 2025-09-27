@@ -25,9 +25,15 @@ class AmalanResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'Data Amalan Ahbab';
 
+    protected static ?string $navigationLabel = 'Tasykil';
+
+    protected static ?string $breadcrumb = 'Tasykil';
+
     protected static string | UnitEnum | null $navigationGroup = 'Personnel';   
     
     protected static ?int $navigationSort = 44;
+
+    protected static ?string $title = 'Tasykil'; 
 
     public static function form(Schema $schema): Schema
     {

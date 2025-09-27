@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Azams;
 
+use App\Filament\Resources\Azams\Pages\Tafakut;
 use App\Filament\Resources\Azams\Pages\CreateAzam;
 use App\Filament\Resources\Azams\Pages\EditAzam;
 use App\Filament\Resources\Azams\Pages\ListAzams;
@@ -53,11 +54,13 @@ class AzamResource extends Resource
 
     public static function getPages(): array
     {
+        // AzamResource::getUrl('tafakut');
         return [
             'index' => ListAzams::route('/'),
             // 'create' => CreateAzam::route('/create'),
             // 'view' => ViewAzam::route('/{record}'),
             // 'edit' => EditAzam::route('/{record}/edit'),
+            'tafakut' => Pages\Tafakut::route('/tafakut'),
         ];
     }
 }
