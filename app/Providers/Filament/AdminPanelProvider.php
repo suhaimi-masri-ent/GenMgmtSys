@@ -38,7 +38,6 @@ class AdminPanelProvider extends PanelProvider
             ->pages([
                 Dashboard::class,
             ])
-            ->sidebarCollapsibleOnDesktop()
             ->topNavigation()
             ->maxContentWidth(Width::Full)
             ->navigationGroups([
@@ -55,6 +54,7 @@ class AdminPanelProvider extends PanelProvider
                     ->icon('heroicon-o-cog-6-tooth')
                     ->collapsible(true),
             ])            
+            ->sidebarCollapsibleOnDesktop()
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
             ->widgets([
                 AccountWidget::class,
