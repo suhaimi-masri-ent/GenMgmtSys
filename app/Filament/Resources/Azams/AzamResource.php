@@ -61,7 +61,7 @@ class AzamResource extends Resource
     {
         return [
             'index' => ListAzams::route('/'),
-            // 'show' => ShowTafakut::route('/{record}/show'),
+            'show' => ShowTafakut::route('/{record}/show'),
             // 'create' => CreateAzam::route('/create'),
             // 'view' => ViewAzam::route('/{record}'),
             // 'edit' => EditAzam::route('/{record}/edit'),
