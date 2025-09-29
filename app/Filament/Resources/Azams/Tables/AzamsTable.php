@@ -4,6 +4,7 @@ namespace App\Filament\Resources\Azams\Tables;
 
 use App\Filament\Resources\Azams\AzamResource;
 use App\Models\Azam;
+use App\Models\Halqah;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -16,8 +17,6 @@ use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Enums\RecordActionsPosition;
 use Filament\Support\Enums\Alignment;
 use Illuminate\Support\Facades\URL;
-// use Filament\
-
 
 class AzamsTable
 {
@@ -54,9 +53,8 @@ class AzamsTable
                     Action::make('Tafakut')
                         ->icon('heroicon-m-identification')
                         ->label('Tafakut')
-                        ->url(fn (Azam $record): string => AzamResource::getURL('show',['record' => $record])),
-                        // ->url(fn (Azam $record): string => route($record->id, 'show'))
-                        // ->url(Azam::getURL('/1/show')),
+                        ->url(fn (Azam $record): string => AzamResource::getURL('show',['record' => $record]))
+                        ->modalContent(),
             //     ])->dropdownPlacement('right-start')
             // ], position: RecordActionsPosition::BeforeColumns)
             ])

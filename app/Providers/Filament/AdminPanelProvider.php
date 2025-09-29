@@ -38,7 +38,7 @@ class AdminPanelProvider extends PanelProvider
             ->pages([
                 Dashboard::class,
             ])
-            ->topNavigation()
+            // ->topNavigation()
             ->maxContentWidth(Width::Full)
             ->navigationGroups([
                 NavigationGroup::make()

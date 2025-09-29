@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-// use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Azam extends Model
 {
@@ -53,9 +53,24 @@ class Azam extends Model
         return $this->belongsTo(Ahbab::class);
     }    
 
+    public function markaz(): BelongsTo
+    {
+        return $this->belongsTo(Markaz::class);
+    }  
+
+    public function halqah(): BelongsTo
+    {
+        return $this->belongsTo(Halqah::class);
+    }  
+    
     public function mohallah(): BelongsTo
     {
         return $this->belongsTo(Mohallah::class);
-    }  
+    }      
+
+    public function ahbabs(): HasMany
+    {
+        return $this->hasMany(Ahbab::class);
+    }
 
 }
